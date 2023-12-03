@@ -4,15 +4,17 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const input = document.querySelector('input');
+const input = document.querySelector('#controls').firstElementChild;
 const boxes = document.querySelector('#boxes');
+const createBtn = document.querySelector('[data-create]');
+const destroyBtn = document.querySelector('[data-destroy]');
 
 function createBoxes(amount) {
   if (amount >= 1 && amount <= 100) {
     let width = 30;
     let height = 30;
     for (let i = 1; i <= amount; i += 1) {
-      const newDiv = `<div style="width:${width}px; height:${height}px;"></div>`;
+      const newDiv = `<div style="width:${width}px; height:${height}px; background-color:${getRandomHexColor()};"></div>`;
       boxes.insertAdjacentHTML('beforeend', newDiv);
       width += 10;
       height += 10;
@@ -20,10 +22,20 @@ function createBoxes(amount) {
   }
 }
 
+createBtn.addEventListener('click', () => {
+  destroyBoxes();
+  createBoxes(input.value);
+  input.value = '';
+})
+
+function destroyBoxes() {
+  boxes.innerHTML = '';
+}
+destroyBtn.addEventListener('click', () => {
+  destroyBoxes();
+})
 
 
-const body = document.querySelector('body');
-console.log(createBoxes(5))
 
 /* Напиши скрипт створення й очищення колекції елементів з наступним функціоналом.
 
