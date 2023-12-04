@@ -11,7 +11,7 @@ const images = [
     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Group of Horses Running',
   },
-  /*{
+ /* {
     url:
       'https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Elephant Beside on Baby Elephant',
@@ -32,7 +32,7 @@ const images = [
 for (const image of images) {
 const listOfImgs = `
 <li>
-  <img src="${image.url}" alt="${image.alt}" width="360">
+  <img src="${image.url}" alt="${image.alt}">
 </li>
 `
 const ul = document.querySelector('.gallery');
