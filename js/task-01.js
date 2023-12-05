@@ -4,7 +4,7 @@ console.log(`Number of categories: ${ulCategories.length}`);
 ulCategories.forEach(category => {
     console.log(`Category: ${category.firstElementChild.textContent}`);
     
-    const items = category.querySelectorAll('ul>li');
+    const items = category.querySelectorAll('li');
     console.log(`Elements: ${items.length}`);
 })
 
